@@ -30,10 +30,25 @@ $gray: rgb(114, 110, 110);
     align-items: center;
 }
 
+.container {
+    overflow-x: hidden;
+    max-width: 1547px;
+    margin: auto;
+}
+
 header {
     @extend %flexDisplay;
     justify-content: space-between;
     padding: 20px 40px;
+    
+    @media (max-width: 1023px) {
+        padding: 20px 15px;
+    }
+    .icon {
+        @media (min-width: 1024px) {
+            display: none;
+        }
+    }
     .actions {
         @extend %flexDisplay;
         gap: 25px;
@@ -52,6 +67,9 @@ header {
         .register:hover {
             @extend %hover;
             border: 1px solid rgb(49, 48, 48);
+        }
+        @media (max-width: 1023px) {
+            display: none;
         }
     }
 }
@@ -80,5 +98,87 @@ header {
         p:hover {
             @extend %hover;
         }
+        @media (max-width: 1023px) {
+            display: none;
+        }
+    }
+}
+
+.mobile {
+    display: block;
+    width: 100vw;
+    margin-top: 10px;
+    @media (min-width: 1024px) {
+        display: none;
+    }
+}
+section {
+    display: flex;
+    align-items: end;
+    margin: 30px 150px;
+    gap: 150px;
+    h1 {
+        font-size: 70px;
+        @media (max-width: 1100px) {
+            font-size: 60px;
+        }
+        @media (max-width: 1023px) {
+            font-size: 40px;
+        }
+    }
+    p {
+        @extend %textStyle;
+        margin: 70px 0;
+        @media (max-width: 1100px) {
+            margin: 50px 0;
+            line-height: 1.5;
+        }
+        @media (min-width: 1101px) and (max-width: 1517px) {
+            margin: 50px 0;
+            line-height: 1.5;
+        }
+    }
+    button {
+        @include button($gray, 16px, 12px, $gray, transparent, 16px);
+        transition: all 0.3s;
+    }
+    button:hover {
+        background-color: black;
+        color: white;
+    }
+    div {
+        @extend %flexDisplay;
+        gap: 15px;
+        margin-top: 150px;
+        justify-content: center;
+        @media (max-width: 1100px) {
+            margin-top: 100px;
+        }
+        @media (min-width: 1101px) and (max-width: 1517px) {
+            margin-top: 120px;
+        }
+    }
+    .desktop {
+        width: 50%;
+        @media (max-width: 1023px) {
+            display: none;
+        }
+    }
+    @media (max-width: 1100px) {
+        margin: 30px 40px;
+        gap: 70px;
+    }
+    @media (max-width: 1023px) {
+        margin: 30px 40px;
+        gap: 70px;
+        display: block;
+        text-align: center;
+    }
+    @media (min-width: 1101px) and (max-width: 1517px) {
+        margin: 30px 50px;
+        gap: 100px;
+    }
+    @media (max-width: 1023px) {
+        margin: 30px 15px;
     }
 }
