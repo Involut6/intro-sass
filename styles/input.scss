@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Epilogue;
+}
+
+$gray: rgb(114, 110, 110);
+
+@mixin button($border, $px, $py, $text, $bg, $size) {
+    border: 1px solid $border;
+    padding: $py $px;
+    color: $text;
+    text-decoration: none;
+    background-color: $bg;
+    font-size: $size;
+    border-radius: 12px;
+}
+
+%hover {
+    color: rgb(49, 48, 48);
+}
+
+%textStyle {
+    color: $gray;
+    font-weight: 500;
+}
+
+%flexDisplay {
+    display: flex;
+    align-items: center;
+}
+
+header {
+    @extend %flexDisplay;
+    justify-content: space-between;
+    padding: 20px 40px;
+    .actions {
+        @extend %flexDisplay;
+        gap: 25px;
+        @extend %textStyle;
+        .login {
+            @include button(white, 0, 0, $gray, transparent, 14px);
+            @extend %textStyle;
+        }
+        .login:hover {
+            @extend %hover;
+        }
+        .register {
+            @include button($gray, 12px, 8px, $gray, transparent, 14px);
+            @extend %textStyle;
+        }
+        .register:hover {
+            @extend %hover;
+            border: 1px solid rgb(49, 48, 48);
+        }
+    }
+}
+
+.navigation {
+    @extend %flexDisplay;
+    gap: 40px;
+    nav {
+        @extend %flexDisplay, %textStyle;
+        gap: 25px;
+        select {
+            text-decoration: none;
+            border: none;
+            font-size: 14px;
+            @extend %textStyle;
+        }
+        select:focus {
+            outline: none;
+        }
+        select:hover {
+            @extend %hover;
+        }
+        p {
+            font-size: 14px;
+        }
+        p:hover {
+            @extend %hover;
+        }
+    }
+}

@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Epilogue;
+}
+
+.navigation nav p:hover, .navigation nav select:hover, header .actions .register:hover, header .actions .login:hover {
+  color: rgb(49, 48, 48);
+}
+
+.navigation nav select, .navigation nav, header .actions .register, header .actions .login, header .actions {
+  color: rgb(114, 110, 110);
+  font-weight: 500;
+}
+
+.navigation nav, .navigation, header .actions, header {
+  display: flex;
+  align-items: center;
+}
+
+header {
+  justify-content: space-between;
+  padding: 20px 40px;
+}
+header .actions {
+  gap: 25px;
+}
+header .actions .login {
+  border: 1px solid white;
+  padding: 0 0;
+  color: rgb(114, 110, 110);
+  text-decoration: none;
+  background-color: transparent;
+  font-size: 14px;
+  border-radius: 12px;
+}
+header .actions .register {
+  border: 1px solid rgb(114, 110, 110);
+  padding: 8px 12px;
+  color: rgb(114, 110, 110);
+  text-decoration: none;
+  background-color: transparent;
+  font-size: 14px;
+  border-radius: 12px;
+}
+header .actions .register:hover {
+  border: 1px solid rgb(49, 48, 48);
+}
+
+.navigation {
+  gap: 40px;
+}
+.navigation nav {
+  gap: 25px;
+}
+.navigation nav select {
+  text-decoration: none;
+  border: none;
+  font-size: 14px;
+}
+.navigation nav select:focus {
+  outline: none;
+}
+.navigation nav p {
+  font-size: 14px;
+}
+
+/*# sourceMappingURL=output.css.map */
